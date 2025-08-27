@@ -31,8 +31,12 @@
             //var countCorrectAnswers = (np*n2-n1) / (1-np);
 
             $('#countCorrectAnswers').val(countCorrectAnswers);
-        }
 
+            $('#n1, #n2, #np').each(function(i, e){ localStorage[e.id] = e.value; });
+        }       
+
+        $('#n1, #n2, #np').each(function(i, e){ e.value = localStorage[e.id]; });
+        
         // Event listeners for input changes
         $('#n1, #n2, #np').on('input', updateCounter);
 
@@ -83,3 +87,4 @@
 </body>
 
 </html>
+
